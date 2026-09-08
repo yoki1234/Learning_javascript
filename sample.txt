@@ -1,4 +1,8 @@
-6th Sep, 2026: learning uptil HTML CSS REVIEW, Console.log: Lesson 4
+6th Sep, 2026: learning uptil HTML CSS REVIEW, Console.log: Lesson 4.
 time-stamp: 1:09:02
+
+08th sep, 2026: Learning of implementaion of JS in HTML webpages(intro) uptil console project.
+time-stamp: 2:08:04
+
 'https://youtu.be/EerdGm-ehJQ'
 
