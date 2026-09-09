@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cart quantity</title>
+    <style>
+      body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .button-container{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .button-container button{
+        font-size: 15px;
+        font-weight: bold;
+        background-color: rgb(255, 247, 0);
+        width: 120px;
+        height: 50px;
+        border:none;
+        box-shadow: 2px 2px 3px 1px #000000;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all .5s ease;
+      }
+
+      .button-container button::after{
+        content: ' ';
+        background-color: rgba(255, 0, 0, 0.314);
+        position: absolute;
+        width: 120px;
+        height: 50px;
+        top: 100px;
+        right: 0;
+        transition: top .5s ease;
+      }
+
+      .button-container button:hover::after{
+        top:0;
+      }
+
+      .button-container button:active::after{
+        top:25px
+      }
+
+      .button-container button:active{
+        box-shadow: inset 1px 1px 2px 1px #000000;
+        border: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <button onclick="
+        console.log(`cart quantity: ${cartQuantity}`);
+        ">Show Quantity</button>
+      <button onclick="
+      cartQuantity++;
+      console.log(`cart quantity:${cartQuantity}`);
+      ">Add to Cart</button>
+      <button onclick="
+      cartQuantity += 2;
+      console.log(`cart quantity:${cartQuantity}`);
+      ">+2</button>
+      <button onclick="
+      cartQuantity += 3;
+      console.log(`cart quantity:${cartQuantity}`)
+      ">+3</button>
+      <button onclick="
+      cartQuantity = 0;
+      console.log('cart was reset');
+      console.log(`cart quantity:${cartQuantity}`)
+      ">Reset cart</button>
+      </div>
+    <script>  
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>

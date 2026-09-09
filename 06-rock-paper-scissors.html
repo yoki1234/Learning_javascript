@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock_Paper_Scissors</title>
+  </head>
+  <body>
+    <p>Rock paper Scissors</p>
+    <div>
+      <button onclick="playGame('Rock')">Rock</button>
+      <button onclick="playGame('Paper')">Paper</button>
+      <button onclick="playGame('Scissors')">Scissors</button>
+    </div>
+    <script>
+        let gameOptions = ['Rock','Paper','Scissors'];
+
+        const playGame =(userChoice)=>{
+          const randomIndex = Math.floor(Math.random()*gameOptions.length);
+          const computerChoice = gameOptions[randomIndex];
+          console.log(`You chose: ${userChoice}`);
+          console.log(`Computer chose: ${computerChoice}`);
+
+          if(userChoice === computerChoice){
+            console.log("It's tie!")
+          }else if (
+            (userChoice === 'Rock' && computerChoice === 'Scissors') ||
+            (userChoice === 'Paper' && computerChoice === 'Rock') ||
+            (userChoice === 'Scissors' && computerChoice === 'Paper')
+          ){
+            console.log(`I won, as ${userChoice} beats ${computerChoice}`)
+          }else{
+            console.log(`Computer won!`)
+          }
+        }
+
+
+
+
+    </script>
+  </body>
+</html>
