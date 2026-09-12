@@ -86,3 +86,110 @@
 .info-button-container > button:nth-child(2):active{
   box-shadow: inset 2px 2px 3px 1px rgb(138, 2, 2);
 }
+
+/* rock-paper-scissors */
+
+.rps-img-container{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: 5px 8px 10px 2px black;
+  cursor: pointer;
+}
+
+.rps-img-container:active{
+  box-shadow: 1px 2px 5px 0px black;
+}
+
+.rps-img-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: rgb(246, 178, 90);
+}
+.rps-container{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 0
+}
+
+.rps-sign-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:100px
+}
+
+.rps-title-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rps-title-container div:first-child{
+  font-size: 100px;
+  font-weight: 600;
+}
+
+.rps-title-container div:nth-child(2){
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.rps-pop-up{
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.433);
+  backdrop-filter: blur(10px);
+}
+
+.rps-content-pop-up{
+  width: fit-content;
+  height: fit-content;
+  background-color: antiquewhite;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rps-content-pop-up div:first-child{
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.rps-content-pop-up div:nth-child(2){
+  background-color: black;
+  height: 1px;
+  width: 100%;
+}
+
+
+.rps-content-pop-up button{
+  width: fit-content;
+  font-size: 20px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 3px 2px 2px black;
+}
+
+.rps-content-pop-up button:active{
+  box-shadow: 1px 1px 1px 1px black;
+}
