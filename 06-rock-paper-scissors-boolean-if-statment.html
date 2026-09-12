@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock-paper-scissors</title>
+    <link rel="stylesheet" href="./Style.css">
+  </head>
+  <body>
+    <div id="pop-up" class="rps-pop-up">
+      <div class="rps-content-pop-up">
+        <div>Result</div>
+        <div></div>
+        <div id="result"></div>
+        <button id="closebtn">Play Again</button>
+      </div>
+    </div>
+    <div class="rps-container">
+      <div class="rps-title-container">
+        <div>Let's Play</div>
+        <div>Rock, Paper, Scissors</div>
+      </div>
+        <div class="rps-sign-container">
+          <div id="rock" onclick="document.getElementById('result').textContent = playGame('Rock');" class="rps-img-container">
+            <img src="./assets/rock.png" alt="rock">
+          </div>
+          <div id="paper" onclick="document.getElementById('result').textContent = playGame('Paper');" class="rps-img-container">
+            <img src="./assets/paper.png" alt="paper">
+          </div>
+          <div id="scissors" onclick="document.getElementById('result').textContent = playGame('Scissors');" class="rps-img-container">
+          <img src="./assets/scissors.png" alt="scissors">
+        </div>
+      </div>
+    </div>
+    <script>
+      const playGame = (playerChoice) => {
+        const gameArray = ['Rock', 'Paper', 'Scissors'];
+        const randomNumber = Math.floor(Math.random() * gameArray.length);
+        const computerChoice = gameArray[randomNumber];
+
+        let result;
+
+        if (playerChoice === computerChoice) {
+          result = `It's a tie!`;
+        } else if (
+          (playerChoice === 'Rock' && computerChoice === 'Scissors') ||
+          (playerChoice === 'Paper' && computerChoice === 'Rock') ||
+          (playerChoice === 'Scissors' && computerChoice === 'Paper')
+        ) {
+          result = `Congratulations! You won! ${playerChoice} beats ${computerChoice}`;
+        } else {
+          result = `You lose! ${computerChoice} beats ${playerChoice}`;
+        }
+
+        return result;
+      };
+
+      const popup = document.getElementById("pop-up");
+
+      document.getElementById("rock").addEventListener("click", showPopup)
+      document.getElementById("paper").addEventListener("click", showPopup)
+      document.getElementById("scissors").addEventListener("click", showPopup)
+
+      const closeBtn =document.getElementById("closebtn");
+
+      
+      function showPopup(){
+        popup.style.display = "flex";
+      }
+      closeBtn.addEventListener("click",()=>{
+        popup.style.display = "none";
+      })
+
+    </script>
+  </body>
+</html>
