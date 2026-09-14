@@ -1,0 +1,105 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+.top-option-container{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background-color: rgb(0,83,159);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.top-option-container div{
+  height: 100%;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  color: white;
+  font-size: larger;
+  font-weight: 600;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.logo-searchbar-container{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.searchbar-container{
+  display: flex;
+  align-items: center;
+}
+
+.searchbar-container input{
+  width: 514px;
+  padding: 0 12px;
+  height: 40px;
+  margin-right: 12px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.searchbar-container div{
+  width: 45px;
+  height: 45px;
+  position: relative;
+  background-color: rgb(0,83,159);
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.searchbar-container div img{
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+.sign-in-btn-container{
+  display: flex;
+  align-items: center;
+  gap:12px;
+  padding-right: 15px;
+}
+
+.sign-in-btn-container button{
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 2px solid rgb(0,83,159);;
+  background-color: rgb(0,83,159);
+  color: white;
+}
+
+.sign-in-btn-container button:nth-child(2){
+  background-color: rgb(255, 255, 255);
+  color:rgb(0,83,159);
+  border: 2px solid rgb(0,83,159);
+}
+
+.bottom-nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.bottom-nav-container div {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(0,83,159);
+
+}

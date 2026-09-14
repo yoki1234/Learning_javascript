@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ternary,Guard,Default</title>
+  </head>
+  <body>
+    <div>Hello</div>
+    <script>
+      const guard = false && console.log("hello world!");
+      const ternary = true ? console.log("hello") : console.log("bye");
+      const defaults = true || console.log("world!");
+
+      const enterTime = 12;
+
+      const now = new Date();
+      
+      const hours = now.getHours();
+      console.log(hours);
+
+
+      const wishingResult =
+        ((enterTime < 24 && enterTime == 0) && (hours < 24)) &&
+        ((6 <= enterTime && enterTime <= 12) 
+          ? "Good morning!"
+          : (13 <= enterTime && enterTime <= 17)
+            ? "Good afternoon!"
+            : "Good Night!");
+
+      console.log(wishingResult);
+
+    </script>
+  </body>
+</html>
