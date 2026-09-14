@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>coin-filp</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>Play game</button>
+    </div>
+    <script>
+      const coinFaces = ["heads", "Tails"];
+      const randomSelection = Math.floor(Math.random()*coinFaces.length);
+      console.log(randomSelection);
+      const playGame = randomSelection == 0 ? console.log("Heads!") : console.log("Tails");
+    </script>
+  </body>
+</html>
