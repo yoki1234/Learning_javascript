@@ -1,0 +1,56 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(70, 89, 69);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+.resultField{
+  width: 400px;
+  height: 50px;
+}
+
+.resultField input{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  font-size: 30px;
+  box-shadow: inset 2px 2px 2px 2px rgb(56, 52, 52);
+}
+
+.numberBtn{
+  display: flex;
+  flex-wrap: ;
+}
+
+.numberBtn button, .operatorBtn button{
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(77, 131, 86);
+  box-shadow: inset 2px 2px 2px 2px black;
+  cursor: pointer;
+}
+
+.numberBtn button{
+  display: grid;
+  grid-template-columns: ;
+}
