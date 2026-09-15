@@ -50,7 +50,9 @@ body{
   cursor: pointer;
 }
 
-.numberBtn button{
+.numberBtn{
   display: grid;
-  grid-template-columns: ;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3,1fr);
+  gap:9px;
 }
