@@ -1,5 +1,22 @@
-const numbers = [1,2,3,4,5,6,7,8,9,0];
-const operators = ["+", "-", "*", "/", "**", "=", "Reset"];
+const numbersAndOperators = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "**", "=", "Reset"];
 
-document.getElementById("numberBtns").innerHTML= numbers.map((item)=> `<button> ${item} </button>`).join(" ");
-document.getElementById("operatorBtns").innerHTML= operators.map((item)=>`<button>${item}</button>`).join(" ");
+const operatorName = {
+  "+": "plus",
+  "-": "minus",
+  "*": "multiply",
+  "/": "divide",
+  "**": "power",
+  "=": "equal",
+  "Reset": "reset"
+}
+
+
+document.getElementById("numberAndOperatorBtns").innerHTML = numbersAndOperators
+    .map((item) => {
+      const areaName = operatorName[item] || item;
+      return `<button style="grid-area: btn-${areaName};">${item}</button>`;
+    })
+    .join("");
+
+  
+
