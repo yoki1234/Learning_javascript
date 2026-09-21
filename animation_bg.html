@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>animation</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(252, 250, 250, 0.97);
+      }
+
+      #container{
+        position: relative;
+        width: 800px;
+        height: 800px;
+        background-color: rgb(10, 4, 4);
+        overflow: hidden;
+        border-radius: 60px;
+        box-shadow: 10px 20px 20px 2px rgba(0, 0, 0, 0.752);
+        backdrop-filter: blur(100px);
+      }
+
+      #container::after{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: " ";
+        top: 0;
+        left: 0;
+        background-color: rgba(203, 195, 195, 0);
+        backdrop-filter: blur(100px);
+      }
+
+      #container div{
+        background-color: rgb(3, 221, 221);
+        color: transparent;
+      }
+
+
+
+      #container div:nth-child(1){
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: itemOne 3s infinite ease-in-out;
+        background-color: rgb(199, 221, 3);
+      }
+
+      @keyframes itemOne {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        25% {
+          transform: translate(200px, -100px);
+        }
+
+        50% {
+          transform: translate(400px, 100px);
+        }
+
+        75% {
+          transform: translate(200px, 300px);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+    }
+
+     #container div:nth-child(2){
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: itemTwo 6s infinite ease-in-out;
+         background-color: rgb(221, 3, 10);
+      }
+
+       @keyframes itemTwo {
+        0% {
+          transform: translate(600px, 600px);
+        }
+
+        25% {
+          transform: translate(300px, -200px);
+        }
+
+        50% {
+          transform: translate(500px, 200px);
+        }
+
+        75% {
+          transform: translate(300px, 400px);
+          width: 150px;
+          height: 150px;
+        }
+
+        100% {
+          transform: translate(-100px, 100px);
+          width: 50px;
+          height: 50px;
+        }
+    }
+
+      #container div:nth-child(3){
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: itemThree 9s infinite ease-in-out;
+        background-color: rgb(3, 221, 36);
+      }
+
+       @keyframes itemThree {
+        0% {
+          transform: translate(-600px,-600px);
+        }
+
+        25% {
+          transform: translate(300px, -200px);
+        }
+
+        50% {
+          transform: translate(500px, 200px);
+          width: 200px;
+          height: 200px;
+        }
+
+        75% {
+          transform: translate(300px, 400px);
+        }
+
+        100% {
+          transform: translate(-100px, 100px);
+          width: 20px;
+          height: 20px;
+        }
+    }
+
+    #container div:nth-child(4){
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: itemFour 11s infinite ease-in-out;
+      }
+
+       @keyframes itemFour {
+        0% {
+          transform: translate(-600px,-600px);
+          width: 300px;
+          height: 300px;
+        }
+
+        25% {
+          transform: translate(800px, -200px);
+        }
+
+        50% {
+          transform: translate(100px, 100px);
+        }
+
+        75% {
+          transform: translate(100px, 900px);
+        }
+
+        100% {
+          transform: translate(-100px, 100px);
+        }
+    }
+
+    .content{
+      position: absolute;
+      color: rgb(245, 246, 247);
+      width: 700px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .content div:nth-child(2){
+      text-align: center;
+      background-color: rgba(236, 238, 230, 0.042);
+      width: fit-content;
+      height: fit-content;
+      padding: 60px 30px;
+      border-radius: 20px;
+      height: 200px;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+
+    .title{
+      font-size: 60px;
+      text-align: center;
+    }
+
+    ::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(236, 238, 230, 0),
+    rgba(236, 238, 230, 0),
+    #fff,
+    rgba(236, 238, 230, 0),
+    rgba(236, 238, 230, 0)
+  );
+  border-radius: 10px;
+  
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div class="content">
+      <div class="title">Animation Background</div>
+      <div>A dark, immersive animated background with soft glowing particles floating slowly across the screen, creating a smooth depth effect. Different-sized blurred circles and subtle light waves move continuously in random directions, while gentle color gradients shift between blue, purple, cyan, and pink. Some particles move closer and become brighter, while others fade into the background, creating a dynamic 3D-like atmosphere without distracting from the main content.</div>
+    </div>
+  </body>
+  <script>
+    const arrayData = [1,2,3,4]
+    document.getElementById("container").innerHTML = arrayData.map((item)=>`<div>${item}</div>`).join(" ");
+</script>
+</html>
