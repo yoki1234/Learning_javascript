@@ -19,7 +19,7 @@
       #container{
         position: relative;
         width: 800px;
-        height: 800px;
+        height: 900px;
         background-color: rgb(10, 4, 4);
         overflow: hidden;
         border-radius: 60px;
@@ -182,14 +182,14 @@
       font-size: 30px;
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      align-items: end;
+      gap: 20px;
     }
 
     .content div:nth-child(2){
       text-align: center;
       background-color: rgba(236, 238, 230, 0.042);
       width: fit-content;
-      height: fit-content;
       padding: 60px 30px;
       border-radius: 20px;
       height: 200px;
@@ -223,6 +223,19 @@
   
 }
 
+#buttons button{
+  width: fit-content;
+  height: fit-content;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 50px;
+  border: none;
+  background-color: rgba(236, 238, 230, 0.042);
+  color: white;
+  cursor: pointer;
+}
 
     </style>
   </head>
@@ -230,11 +243,65 @@
     <div id="container"></div>
     <div class="content">
       <div class="title">Animation Background</div>
-      <div>A dark, immersive animated background with soft glowing particles floating slowly across the screen, creating a smooth depth effect. Different-sized blurred circles and subtle light waves move continuously in random directions, while gentle color gradients shift between blue, purple, cyan, and pink. Some particles move closer and become brighter, while others fade into the background, creating a dynamic 3D-like atmosphere without distracting from the main content.</div>
+      <div id="info">A dark, immersive animated background with soft glowing particles floating slowly across the screen, creating a smooth depth effect. Different-sized blurred circles and subtle light waves move continuously in random directions, while gentle color gradients shift between blue, purple, cyan, and pink. Some particles move closer and become brighter, while others fade into the background, creating a dynamic 3D-like atmosphere without distracting from the main content.</div>
+      <div id="buttons"></div>
     </div>
   </body>
   <script>
     const arrayData = [1,2,3,4]
     document.getElementById("container").innerHTML = arrayData.map((item)=>`<div>${item}</div>`).join(" ");
+    
+   const btnLabel = ["show more", "show less"];
+
+const btnIdlabel = {
+  "show more": "showMore",
+  "show less": "showLess"
+};
+
+const btn = document.getElementById("buttons");
+
+btn.innerHTML = btnLabel
+  .map(
+    item =>
+      `<button id="${btnIdlabel[item]}" onclick="activebtn('${btnIdlabel[item]}')">${item}</button>`
+  )
+  .join(" ");
+
+
+const info = document.getElementById("info");
+
+const showMore = document.getElementById("showMore");
+const showLess = document.getElementById("showLess");
+
+
+// Initial state
+showMore.style.display = "block";
+showLess.style.display = "none";
+
+
+function activebtn(btnlabel) {
+
+  if (btnlabel === "showMore") {
+
+    info.style.height = "fit-content";
+    info.style.overflow = "visible";
+
+    showMore.style.display = "none";
+    showLess.style.display = "block";
+
+  } 
+  
+  else if (btnlabel === "showLess") {
+
+    info.style.height = "300px"; // change to your original height
+    info.style.overflow = "scroll";
+
+    showMore.style.display = "block";
+    showLess.style.display = "none";
+  }
+}
+        
+
+
 </script>
 </html>
