@@ -65,7 +65,13 @@
         border: none;
       }
 
-      #ansContainer
+      #ansContainer {
+        min-height: 30px;
+        text-align: center;
+        font-size: 18px;
+        color: rgb(52, 46, 46);
+        font-weight: 600;
+      }
 
     </style>
   </head>
@@ -96,10 +102,10 @@
 
     const typingAns = document.getElementById("typingAns");
     const ansContainer = document.getElementById("ansContainer");
-    typingAns.addEventListener("input", () => {
-  ansContainer.innerHTML = `<div>${typingAns.value}</div>`;
-    }
 
+    typingAns.addEventListener("input", () => {
+      ansContainer.innerHTML = `<div>${typingAns.value}</div>`;
+    });
 
   </script>
 </html>
