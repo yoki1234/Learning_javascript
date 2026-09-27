@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+    <style>
+      *{
+        padding: 0;
+        margin:0;
+      }
+
+      body{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        font-size: 20px;
+        gap:20px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+
+      #youtube{
+        text-transform: capitalize;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+      }
+
+      #youtube button{
+        text-transform: capitalize;
+        width: fit-content;
+        padding: 8px 15px;
+        border-radius: 20px;
+        border: none;
+        background-color: black;
+        color: rgb(236, 233, 233);
+        font-weight: 700px;
+        font-size: 20px;
+      }
+
+      #amazon{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+      }
+
+    
+      #amzCal{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #amzCal input{
+        width: 250px;
+        height: 100%;
+        padding-left : 10px ;
+        font-size: 20px;
+      }
+
+      #amzCal button{
+        height: 100%;
+        padding: 0px 20px;
+        font-size: 20px;
+        border: 0;
+        background-color: green;
+        color: aliceblue;
+        text-transform: capitalize;
+      }
+
+    </style>
+  </head>
+  <body></body>
+  <script>
+
+    const simpleData = {
+      "youtube":{
+        "title" : "youtube subscribe button",
+        "btnTitle": {
+          "subscribe": "subscribe",
+          "subscribed": "subscribed"
+        },
+      },
+       "amz" : {
+        "title":"amazon shipping calculator",
+        "firstPara":"Orders under $40 = +$10 shipping.",
+        "secondPara":"Orders over $40 = FREE shipping.",
+        "btnTitle":"calculate",
+        "placeholder":"Cost of Order"
+       },
+       "rockPaperScissors":{
+        "title":"Rock Paper Scissors",
+        "linkTitle":"Click here",
+        "link":"06-rock-paper-scissors-boolean-if-statment.html"
+       }
+    }
+
+
+    const youtubeData = simpleData.youtube;
+    const amazonData = simpleData.amz;
+    const rockPaperScissorsData = simpleData.rockPaperScissors;
+
+
+
+
+    document.body.innerHTML = `
+        <div id="youtube"></div>
+        <div id="amazon"></div>
+        <div id="rockPaperScissors"></div>
+        `;
+
+        
+        document.querySelector('#youtube').innerHTML=`
+        <p>${youtubeData.title}</p>
+        <button id="subBtn" onClick = "subscribeBtn()">${youtubeData.btnTitle.subscribe}</button>
+        `
+
+        function subscribeBtn(){
+          const subscribe = youtubeData.btnTitle.subscribe;
+          const subscribed = youtubeData.btnTitle.subscribed;
+          const btnElement = document.getElementById("subBtn");
+          if(btnElement.innerHTML.trim() === subscribe){
+            btnElement.innerHTML = subscribed;
+            btnElement.style.backgroundColor="rgb(236, 233, 233)";
+            btnElement.style.color = "black";
+          }else {
+            btnElement.innerHTML= subscribe;
+            btnElement.style.backgroundColor="black";
+            btnElement.style.color = "rgb(236, 233, 233)";
+          }
+        }
+
+    document.querySelector('#amazon').innerHTML = `
+      <p>${amazonData.title}</p>
+      <p>${amazonData.firstPara}</p>
+      <p>${amazonData.secondPara}</p>
+      <div id='amzCal'>
+        <input id="itemAmount" type="text" placeholder="${amazonData.placeholder}">
+        <button onClick="calculation()">${amazonData.btnTitle}</button>
+        </div>
+        <div id="answer"></div>
+      `
+
+      function calculation(){
+        const inputField = document.getElementById("itemAmount");
+        const answer = document.getElementById("answer");
+        const amount = Number(inputField.value.trim());
+
+        if (amount >= 40) {
+          answer.innerHTML = "$" + amount;
+        } else {
+          answer.innerHTML = "$" + (amount + 10);
+        }
+
+        console.log(typeof inputField.value.trim());
+      }
+
+    document.querySelector('#rockPaperScissors').innerHTML=`
+      <p>${rockPaperScissorsData.title}</p>
+      <a href=${rockPaperScissorsData.link} >${rockPaperScissorsData.linkTitle}</a>
+      `
+
+  </script>
+</html>
