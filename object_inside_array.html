@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>array_inside_object</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+
+    const data = [
+      {
+        "name":"Anjali",
+        "age":"29",
+        "favColor":"red"
+      },
+      {
+        "name":"ram",
+        "age":"28",
+        "favColor":"blue"
+      },
+      {
+        "name":"rahul",
+        "age":"30",
+        "favColor":"black"
+      }
+    ]
+
+
+    const container = document.getElementById("container");
+    container.innerHTML = data.map((item)=>`
+    <p>My name ${item.name}, my age ${item.age} and my favorite color is ${item.favColor}.</p>
+    `).join(" ");
+    
+  </script>
+</html>
